@@ -1,0 +1,11 @@
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\bin\Debug\Entities.dll
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\bin\Debug\Entities.pdb
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\alumnos\Desktop\UPCSolution\DataAccess\obj\Debug\DataAccess.pdb

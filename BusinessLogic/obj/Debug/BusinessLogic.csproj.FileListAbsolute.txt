@@ -1,0 +1,11 @@
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\bin\Debug\DataAccess.dll
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\bin\Debug\Entities.dll
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\bin\Debug\DataAccess.pdb
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\bin\Debug\Entities.pdb
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\alumnos\Desktop\UPCSolution\BusinessLogic\obj\Debug\BusinessLogic.pdb

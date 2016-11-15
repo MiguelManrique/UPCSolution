@@ -1,0 +1,10 @@
+C:\Users\alumnos\Desktop\UPCSolution\Entities\bin\Debug\Entities.dll.config
+C:\Users\alumnos\Desktop\UPCSolution\Entities\bin\Debug\Entities.dll
+C:\Users\alumnos\Desktop\UPCSolution\Entities\bin\Debug\Entities.pdb
+C:\Users\alumnos\Desktop\UPCSolution\Entities\bin\Debug\EntityFramework.dll
+C:\Users\alumnos\Desktop\UPCSolution\Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alumnos\Desktop\UPCSolution\Entities\bin\Debug\EntityFramework.xml
+C:\Users\alumnos\Desktop\UPCSolution\Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alumnos\Desktop\UPCSolution\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\alumnos\Desktop\UPCSolution\Entities\obj\Debug\Entities.dll
+C:\Users\alumnos\Desktop\UPCSolution\Entities\obj\Debug\Entities.pdb

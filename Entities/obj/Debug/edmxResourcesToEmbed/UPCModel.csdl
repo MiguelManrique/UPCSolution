@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UPCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Career">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Courses" Relationship="Self.FK_Courses_Careers" FromRole="Careers" ToRole="Courses" />
+  </EntityType>
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CareerId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Credits" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Career" Relationship="Self.FK_Courses_Careers" FromRole="Courses" ToRole="Careers" />
+    <NavigationProperty Name="StudentsByCourses" Relationship="Self.FK_StudentsByCourse_Courses" FromRole="Courses" ToRole="StudentsByCourse" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="GradeAverage" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+    <NavigationProperty Name="StudentsByCourses" Relationship="Self.FK_StudentsByCourse_Courses1" FromRole="Students" ToRole="StudentsByCourse" />
+  </EntityType>
+  <EntityType Name="StudentsByCourse">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentId" Type="Int32" Nullable="false" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <Property Name="Period" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK_StudentsByCourse_Courses" FromRole="StudentsByCourse" ToRole="Courses" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_StudentsByCourse_Courses1" FromRole="StudentsByCourse" ToRole="Students" />
+  </EntityType>
+  <Association Name="FK_Courses_Careers">
+    <End Role="Careers" Type="Self.Career" Multiplicity="1" />
+    <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Careers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="CareerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentsByCourse_Courses">
+    <End Role="Courses" Type="Self.Cours" Multiplicity="1" />
+    <End Role="StudentsByCourse" Type="Self.StudentsByCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentsByCourse">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentsByCourse_Courses1">
+    <End Role="Students" Type="Self.Student" Multiplicity="1" />
+    <End Role="StudentsByCourse" Type="Self.StudentsByCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentsByCourse">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UPCModelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Careers" EntityType="Self.Career" />
+    <EntitySet Name="Courses" EntityType="Self.Cours" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="StudentsByCourses" EntityType="Self.StudentsByCourse" />
+    <AssociationSet Name="FK_Courses_Careers" Association="Self.FK_Courses_Careers">
+      <End Role="Careers" EntitySet="Careers" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentsByCourse_Courses" Association="Self.FK_StudentsByCourse_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="StudentsByCourse" EntitySet="StudentsByCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentsByCourse_Courses1" Association="Self.FK_StudentsByCourse_Courses1">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="StudentsByCourse" EntitySet="StudentsByCourses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

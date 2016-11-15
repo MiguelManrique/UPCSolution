@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UPCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Careers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CareerId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Area" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Credits" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="GradeAverage" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentsByCourse">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentId" Type="int" Nullable="false" />
+    <Property Name="CourseId" Type="int" Nullable="false" />
+    <Property Name="Period" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Courses_Careers">
+    <End Role="Careers" Type="Self.Careers" Multiplicity="1" />
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Careers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="CareerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentsByCourse_Courses">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
+    <End Role="StudentsByCourse" Type="Self.StudentsByCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentsByCourse">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentsByCourse_Courses1">
+    <End Role="Students" Type="Self.Students" Multiplicity="1" />
+    <End Role="StudentsByCourse" Type="Self.StudentsByCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentsByCourse">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UPCModelStoreContainer">
+    <EntitySet Name="Careers" EntityType="Self.Careers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentsByCourse" EntityType="Self.StudentsByCourse" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Courses_Careers" Association="Self.FK_Courses_Careers">
+      <End Role="Careers" EntitySet="Careers" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentsByCourse_Courses" Association="Self.FK_StudentsByCourse_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="StudentsByCourse" EntitySet="StudentsByCourse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentsByCourse_Courses1" Association="Self.FK_StudentsByCourse_Courses1">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="StudentsByCourse" EntitySet="StudentsByCourse" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

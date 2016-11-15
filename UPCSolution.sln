@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPC", "UPC\UPC.csproj", "{D3C29C6F-3540-4983-AF02-70162B512822}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{05046CF1-B459-45CB-8F39-0016807A66E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{ABD3CCFE-6E48-43D2-AA44-AA0E91E6E318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{0081E9CE-5B00-49D0-AE5A-7398188B4646}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UPCWeb", "http://localhost:50480", "{CD775182-FBE2-4F52-8C66-4F5D365106D7}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{abd3ccfe-6e48-43d2-aa44-aa0e91e6e318}|BusinessLogic.dll;{05046CF1-B459-45CB-8F39-0016807A66E1}|DataAccess.dll;{0081E9CE-5B00-49D0-AE5A-7398188B4646}|Entities.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50480"
+		Debug.AspNetCompiler.PhysicalPath = "UPCWeb\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50480\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50480"
+		Release.AspNetCompiler.PhysicalPath = "UPCWeb\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50480\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "UPCWeb\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3C29C6F-3540-4983-AF02-70162B512822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3C29C6F-3540-4983-AF02-70162B512822}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3C29C6F-3540-4983-AF02-70162B512822}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3C29C6F-3540-4983-AF02-70162B512822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05046CF1-B459-45CB-8F39-0016807A66E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05046CF1-B459-45CB-8F39-0016807A66E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05046CF1-B459-45CB-8F39-0016807A66E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05046CF1-B459-45CB-8F39-0016807A66E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD3CCFE-6E48-43D2-AA44-AA0E91E6E318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD3CCFE-6E48-43D2-AA44-AA0E91E6E318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD3CCFE-6E48-43D2-AA44-AA0E91E6E318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD3CCFE-6E48-43D2-AA44-AA0E91E6E318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0081E9CE-5B00-49D0-AE5A-7398188B4646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0081E9CE-5B00-49D0-AE5A-7398188B4646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0081E9CE-5B00-49D0-AE5A-7398188B4646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0081E9CE-5B00-49D0-AE5A-7398188B4646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD775182-FBE2-4F52-8C66-4F5D365106D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD775182-FBE2-4F52-8C66-4F5D365106D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD775182-FBE2-4F52-8C66-4F5D365106D7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD775182-FBE2-4F52-8C66-4F5D365106D7}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
